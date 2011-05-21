@@ -8,9 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class GraphView;
 
-@interface GraphView : UIView {
-    
+@protocol GraphViewDelegate
+@property (nonatomic) int scale;
+- (int)YValueForX:(int)x;
+@end
+
+
+@interface GraphView : UIView
+{
+    id <GraphViewDelegate> delegate_;
 }
+
+@property (nonatomic, assign) id <GraphViewDelegate> delegate;
 
 @end

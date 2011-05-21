@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "GraphView.h"
 
-@interface GraphViewController : UIViewController {
+@interface GraphViewController : UIViewController <GraphViewDelegate>
+{
     GraphView *graphView_;
+    int scale_;
 }
 
 - (IBAction)zoomIn;
 - (IBAction)zoomOut;
 
 @property (nonatomic, retain) IBOutlet GraphView *graphView;
-
 @end

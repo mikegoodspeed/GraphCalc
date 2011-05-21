@@ -7,24 +7,27 @@
 //
 
 #import "GraphViewController.h"
-#import "AxesDrawer.h"
+
+@interface GraphViewController ()
+- (void)updateUI;
+@end
 
 @implementation GraphViewController
 
 @synthesize graphView = graphView_;
+@synthesize scale = scale_;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (void)setScale:(int)scale
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    if (scale < 1)
+        scale = 1;
+    scale_ = scale;
+    [self updateUI];
 }
 
 - (void)dealloc
 {
-    self.graphView = nil;
+    [graphView_ release];
     [super dealloc];
 }
 
@@ -32,13 +35,14 @@
 
 - (void)updateUI
 {
-    //[AxesDrawer drawAxesInRect:self.view.bounds originAtPoint:self.view.center scale:14];
+    [self.graphView setNeedsDisplay];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self updateUI];
+    self.graphView.delegate = self;
+    self.scale = 14;
 }
 
 - (void)viewDidUnload
@@ -51,12 +55,17 @@
 
 - (IBAction)zoomIn
 {
-    
+    self.scale++;
 }
 
 - (IBAction)zoomOut
 {
-    
+    self.scale--;
+}
+
+- (int)YValueForX:(int)x
+{
+    return 7;
 }
 
 @end

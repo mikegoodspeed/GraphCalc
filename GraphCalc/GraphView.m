@@ -7,9 +7,11 @@
 //
 
 #import "GraphView.h"
-
+#import "AxesDrawer.h"
 
 @implementation GraphView
+
+@synthesize delegate = delegate_;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -20,17 +22,18 @@
     return self;
 }
 
-/*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    // Drawing code
+    int scale = self.delegate.scale;
+    [AxesDrawer drawAxesInRect:self.bounds originAtPoint:self.center scale:scale];
 }
-*/
+
 
 - (void)dealloc
 {
+    self.delegate = nil;
     [super dealloc];
 }
 
