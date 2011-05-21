@@ -14,6 +14,12 @@
 		27D0C8741387B70F009519C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D0C8731387B70F009519C3 /* main.m */; };
 		27D0C8771387B70F009519C3 /* GraphCalcAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D0C8761387B70F009519C3 /* GraphCalcAppDelegate.m */; };
 		27D0C87A1387B70F009519C3 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27D0C8781387B70F009519C3 /* MainWindow.xib */; };
+		27D0C8951387B86B009519C3 /* CalculatorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D0C8911387B86B009519C3 /* CalculatorBrain.m */; };
+		27D0C8961387B86B009519C3 /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D0C8931387B86B009519C3 /* CalculatorViewController.m */; };
+		27D0C8971387B86B009519C3 /* CalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27D0C8941387B86B009519C3 /* CalculatorViewController.xib */; };
+		27D0C8AA1387BE15009519C3 /* AxesDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D0C8A91387BE15009519C3 /* AxesDrawer.m */; };
+		27D0C8B61387EE98009519C3 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D0C8B41387EE98009519C3 /* GraphViewController.m */; };
+		27D0C8B71387EE98009519C3 /* GraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27D0C8B51387EE98009519C3 /* GraphViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,13 +27,23 @@
 		27D0C8661387B70F009519C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		27D0C8681387B70F009519C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		27D0C86A1387B70F009519C3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		27D0C86E1387B70F009519C3 /* GraphCalc-Info.plist */ = {isa = PBXFileReference; path = "GraphCalc-Info.plist"; sourceTree = "<group>"; };
+		27D0C86E1387B70F009519C3 /* GraphCalc-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GraphCalc-Info.plist"; sourceTree = "<group>"; };
 		27D0C8701387B70F009519C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		27D0C8721387B70F009519C3 /* GraphCalc-Prefix.pch */ = {isa = PBXFileReference; path = "GraphCalc-Prefix.pch"; sourceTree = "<group>"; };
+		27D0C8721387B70F009519C3 /* GraphCalc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GraphCalc-Prefix.pch"; sourceTree = "<group>"; };
 		27D0C8731387B70F009519C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		27D0C8751387B70F009519C3 /* GraphCalcAppDelegate.h */ = {isa = PBXFileReference; path = GraphCalcAppDelegate.h; sourceTree = "<group>"; };
+		27D0C8751387B70F009519C3 /* GraphCalcAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphCalcAppDelegate.h; sourceTree = "<group>"; };
 		27D0C8761387B70F009519C3 /* GraphCalcAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GraphCalcAppDelegate.m; sourceTree = "<group>"; };
 		27D0C8791387B70F009519C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		27D0C8901387B86B009519C3 /* CalculatorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorBrain.h; sourceTree = "<group>"; };
+		27D0C8911387B86B009519C3 /* CalculatorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorBrain.m; sourceTree = "<group>"; };
+		27D0C8921387B86B009519C3 /* CalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorViewController.h; sourceTree = "<group>"; };
+		27D0C8931387B86B009519C3 /* CalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorViewController.m; sourceTree = "<group>"; };
+		27D0C8941387B86B009519C3 /* CalculatorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalculatorViewController.xib; sourceTree = "<group>"; };
+		27D0C8A81387BE15009519C3 /* AxesDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AxesDrawer.h; sourceTree = "<group>"; };
+		27D0C8A91387BE15009519C3 /* AxesDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxesDrawer.m; sourceTree = "<group>"; };
+		27D0C8B31387EE98009519C3 /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
+		27D0C8B41387EE98009519C3 /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
+		27D0C8B51387EE98009519C3 /* GraphViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GraphViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +90,18 @@
 		27D0C86C1387B70F009519C3 /* GraphCalc */ = {
 			isa = PBXGroup;
 			children = (
+				27D0C8A81387BE15009519C3 /* AxesDrawer.h */,
+				27D0C8A91387BE15009519C3 /* AxesDrawer.m */,
+				27D0C8901387B86B009519C3 /* CalculatorBrain.h */,
+				27D0C8911387B86B009519C3 /* CalculatorBrain.m */,
+				27D0C8921387B86B009519C3 /* CalculatorViewController.h */,
+				27D0C8931387B86B009519C3 /* CalculatorViewController.m */,
+				27D0C8941387B86B009519C3 /* CalculatorViewController.xib */,
 				27D0C8751387B70F009519C3 /* GraphCalcAppDelegate.h */,
 				27D0C8761387B70F009519C3 /* GraphCalcAppDelegate.m */,
+				27D0C8B31387EE98009519C3 /* GraphViewController.h */,
+				27D0C8B41387EE98009519C3 /* GraphViewController.m */,
+				27D0C8B51387EE98009519C3 /* GraphViewController.xib */,
 				27D0C8781387B70F009519C3 /* MainWindow.xib */,
 				27D0C86D1387B70F009519C3 /* Supporting Files */,
 			);
@@ -145,6 +171,8 @@
 			files = (
 				27D0C8711387B70F009519C3 /* InfoPlist.strings in Resources */,
 				27D0C87A1387B70F009519C3 /* MainWindow.xib in Resources */,
+				27D0C8971387B86B009519C3 /* CalculatorViewController.xib in Resources */,
+				27D0C8B71387EE98009519C3 /* GraphViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +185,10 @@
 			files = (
 				27D0C8741387B70F009519C3 /* main.m in Sources */,
 				27D0C8771387B70F009519C3 /* GraphCalcAppDelegate.m in Sources */,
+				27D0C8951387B86B009519C3 /* CalculatorBrain.m in Sources */,
+				27D0C8961387B86B009519C3 /* CalculatorViewController.m in Sources */,
+				27D0C8AA1387BE15009519C3 /* AxesDrawer.m in Sources */,
+				27D0C8B61387EE98009519C3 /* GraphViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +293,7 @@
 				27D0C87F1387B70F009519C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
