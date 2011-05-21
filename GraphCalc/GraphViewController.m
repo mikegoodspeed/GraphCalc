@@ -7,9 +7,11 @@
 //
 
 #import "GraphViewController.h"
-
+#import "AxesDrawer.h"
 
 @implementation GraphViewController
+
+@synthesize graphView = graphView_;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -22,22 +24,27 @@
 
 - (void)dealloc
 {
+    self.graphView = nil;
     [super dealloc];
 }
 
 #pragma mark - View lifecycle
 
+- (void)updateUI
+{
+    //[AxesDrawer drawAxesInRect:self.view.bounds originAtPoint:self.view.center scale:14];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self updateUI];
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+    self.graphView = nil;
 }
 
 #pragma mark - Implementation

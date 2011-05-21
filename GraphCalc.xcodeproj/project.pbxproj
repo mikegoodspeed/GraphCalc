@@ -20,6 +20,7 @@
 		27D0C8AA1387BE15009519C3 /* AxesDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D0C8A91387BE15009519C3 /* AxesDrawer.m */; };
 		27D0C8B61387EE98009519C3 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D0C8B41387EE98009519C3 /* GraphViewController.m */; };
 		27D0C8B71387EE98009519C3 /* GraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27D0C8B51387EE98009519C3 /* GraphViewController.xib */; };
+		27D0C8C31387FA14009519C3 /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D0C8C21387FA14009519C3 /* GraphView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		27D0C8B31387EE98009519C3 /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
 		27D0C8B41387EE98009519C3 /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
 		27D0C8B51387EE98009519C3 /* GraphViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GraphViewController.xib; sourceTree = "<group>"; };
+		27D0C8C11387FA14009519C3 /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
+		27D0C8C21387FA14009519C3 /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,8 @@
 				27D0C8941387B86B009519C3 /* CalculatorViewController.xib */,
 				27D0C8751387B70F009519C3 /* GraphCalcAppDelegate.h */,
 				27D0C8761387B70F009519C3 /* GraphCalcAppDelegate.m */,
+				27D0C8C11387FA14009519C3 /* GraphView.h */,
+				27D0C8C21387FA14009519C3 /* GraphView.m */,
 				27D0C8B31387EE98009519C3 /* GraphViewController.h */,
 				27D0C8B41387EE98009519C3 /* GraphViewController.m */,
 				27D0C8B51387EE98009519C3 /* GraphViewController.xib */,
@@ -189,6 +194,7 @@
 				27D0C8961387B86B009519C3 /* CalculatorViewController.m in Sources */,
 				27D0C8AA1387BE15009519C3 /* AxesDrawer.m in Sources */,
 				27D0C8B61387EE98009519C3 /* GraphViewController.m in Sources */,
+				27D0C8C31387FA14009519C3 /* GraphView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
