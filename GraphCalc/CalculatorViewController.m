@@ -89,6 +89,7 @@
 - (IBAction)graph
 {
     GraphViewController *gvc = [[GraphViewController alloc] init];
+    gvc.expression = self.brain.expression;
     [self.navigationController pushViewController:gvc animated:YES];
     [gvc release];
     

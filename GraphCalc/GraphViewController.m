@@ -7,6 +7,7 @@
 //
 
 #import "GraphViewController.h"
+#import "CalculatorBrain.h"
 
 @interface GraphViewController ()
 - (void)updateUI;
@@ -16,6 +17,7 @@
 
 @synthesize graphView = graphView_;
 @synthesize scale = scale_;
+@synthesize expression = expression_;
 
 - (void)setScale:(int)scale
 {
@@ -28,6 +30,7 @@
 - (void)dealloc
 {
     [graphView_ release];
+    [expression_ release];
     [super dealloc];
 }
 
@@ -63,9 +66,14 @@
     self.scale--;
 }
 
-- (int)YValueForX:(int)x
+- (double)YValueForX:(int)x
 {
-    return 7;
+    NSDictionary *vars = [[NSDictionary alloc] 
+                          initWithObjectsAndKeys:@"x", x, nil];
+    double value = [CalculatorBrain evaluateExpression:self.expression 
+                                        usingVariables:vars];
+    [vars release];
+    return value;
 }
 
 @end

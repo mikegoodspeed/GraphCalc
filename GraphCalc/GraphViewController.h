@@ -13,10 +13,12 @@
 {
     GraphView *graphView_;
     int scale_;
+    id expression_;
 }
 
 - (IBAction)zoomIn;
 - (IBAction)zoomOut;
 
+@property (nonatomic, retain) id expression;
 @property (nonatomic, retain) IBOutlet GraphView *graphView;
 @end
