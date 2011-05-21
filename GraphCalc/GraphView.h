@@ -12,7 +12,7 @@
 
 @protocol GraphViewDelegate
 @property (nonatomic) int scale;
-- (double)YValueForX:(int)x;
+- (double)YValueForX:(double)x;
 @end
 
 

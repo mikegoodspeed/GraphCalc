@@ -66,10 +66,12 @@
     self.scale--;
 }
 
-- (double)YValueForX:(int)x
+- (double)YValueForX:(double)x
 {
+    NSNumber *xObj = [[NSNumber alloc] initWithDouble:x];
     NSDictionary *vars = [[NSDictionary alloc] 
-                          initWithObjectsAndKeys:@"x", x, nil];
+                          initWithObjectsAndKeys:@"x", xObj, nil];
+    [xObj release];
     double value = [CalculatorBrain evaluateExpression:self.expression 
                                         usingVariables:vars];
     [vars release];

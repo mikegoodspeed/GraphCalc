@@ -27,7 +27,28 @@
 - (void)drawRect:(CGRect)rect
 {
     int scale = self.delegate.scale;
-    [AxesDrawer drawAxesInRect:self.bounds originAtPoint:self.center scale:scale];
+    CGPoint center = CGPointMake(0, 0);
+    center.x = self.bounds.size.width / 2 + self.bounds.origin.x;
+    center.y = self.bounds.size.height / 2 + self.bounds.origin.y;
+    [AxesDrawer drawAxesInRect:self.bounds originAtPoint:center scale:scale];
+    
+	CGContextRef context = UIGraphicsGetCurrentContext();
+	UIGraphicsPushContext(context);
+	CGContextBeginPath(context);
+    CGFloat points = self.bounds.size.width;
+    CGFloat pixels = points * self.contentScaleFactor;
+    CGContextMoveToPoint(context, 0, 0);
+    CGFloat xPoint, yPoint;
+    double y;
+    for (double x = self.bounds.origin.x + 1; x < pixels; x++)
+    {
+        y = [self.delegate YValueForX:x];
+        NSLog(@"%f, %f", x, y);
+        xPoint = x / self.contentScaleFactor;
+        yPoint = y / self.contentScaleFactor;
+        CGContextAddLineToPoint(context, xPoint, yPoint);
+    }
+    CGContextStrokePath(context);
 }
 
 
