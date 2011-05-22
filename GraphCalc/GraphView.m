@@ -22,8 +22,8 @@
     return self;
 }
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
+
+
 - (void)drawRect:(CGRect)rect
 {
     int scale = self.delegate.scale;
@@ -39,18 +39,14 @@
     CGFloat pixels = points * self.contentScaleFactor;
     CGContextMoveToPoint(context, 0, 0);
     
-    CGFloat xPoint, yPoint;
-    double y;
-    for (double x = self.bounds.origin.x + 1; x < pixels; x++)
+    CGContextMoveToPoint(context, 0, -[self.delegate YValueForX:(0 - center.x) / scale] * scale + center.y);
+    for (CGFloat xPixel = 1; xPixel < pixels; xPixel++)
     {
-        y = [self.delegate YValueForX:x];
-        xPoint = x / self.contentScaleFactor;
-        yPoint = self.bounds.size.height - (y / self.contentScaleFactor);
-        CGContextAddLineToPoint(context, xPoint, yPoint);
+        CGFloat yPixel = -[self.delegate YValueForX:(xPixel - center.x) / scale] * scale + center.y;
+        CGContextAddLineToPoint(context, xPixel, yPixel);
     }
     CGContextStrokePath(context);
 }
-
 
 - (void)dealloc
 {
