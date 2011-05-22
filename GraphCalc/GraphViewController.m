@@ -68,12 +68,12 @@
 
 - (double)YValueForX:(double)x
 {
-    NSNumber *xObj = [[NSNumber alloc] initWithDouble:x];
-    NSDictionary *vars = [[NSDictionary alloc] 
-                          initWithObjectsAndKeys:@"x", xObj, nil];
-    [xObj release];
+    NSNumber *number = [[NSNumber alloc] initWithDouble:x];
+    NSDictionary *vars = [[NSDictionary alloc]
+                          initWithObjectsAndKeys:number, @"x", nil];
     double value = [CalculatorBrain evaluateExpression:self.expression 
                                         usingVariables:vars];
+    [number release];
     [vars release];
     return value;
 }

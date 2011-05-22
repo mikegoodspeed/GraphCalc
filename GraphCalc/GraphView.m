@@ -38,14 +38,14 @@
     CGFloat points = self.bounds.size.width;
     CGFloat pixels = points * self.contentScaleFactor;
     CGContextMoveToPoint(context, 0, 0);
+    
     CGFloat xPoint, yPoint;
     double y;
     for (double x = self.bounds.origin.x + 1; x < pixels; x++)
     {
         y = [self.delegate YValueForX:x];
-        NSLog(@"%f, %f", x, y);
         xPoint = x / self.contentScaleFactor;
-        yPoint = y / self.contentScaleFactor;
+        yPoint = self.bounds.size.height - (y / self.contentScaleFactor);
         CGContextAddLineToPoint(context, xPoint, yPoint);
     }
     CGContextStrokePath(context);

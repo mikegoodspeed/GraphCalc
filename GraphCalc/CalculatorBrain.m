@@ -91,7 +91,9 @@
         {
             if ([CalculatorBrain isVariable:item])
             {
-                [brain setVariableAsOperand:[item substringFromIndex:1]];
+                NSString *varName = [item substringFromIndex:1];
+                double value = [[variables objectForKey:varName] doubleValue];
+                [brain setOperand:value];
             }
             else
             {
