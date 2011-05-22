@@ -139,8 +139,7 @@
 
 - (void)setVariableAsOperand:(NSString *)variableName
 {
-    NSString *vp = @"%";
-    [internalExpression addObject:[vp stringByAppendingString:variableName]];
+    [internalExpression addObject:[@"%" stringByAppendingString:variableName]];
 }
 
 - (void)setOperand:(double)aDouble

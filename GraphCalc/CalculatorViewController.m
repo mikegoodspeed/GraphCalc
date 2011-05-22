@@ -82,17 +82,35 @@
 
 - (IBAction)setVariableAsOperand:(UIButton *)sender
 {
-    [brain setVariableAsOperand:sender.titleLabel.text];
+    [self.brain setVariableAsOperand:sender.titleLabel.text];
     display.text = sender.titleLabel.text;
 }
 
 - (IBAction)graph
 {
+    if (userIsInTheMiddleOfTypingANumber)
+    {
+        [self.brain setOperand:[display.text doubleValue]];
+        userIsInTheMiddleOfTypingANumber = NO;
+    }
+    if ([self.brain.expression count] > 0 &&
+        [self.brain.expression objectAtIndex:
+         [self.brain.expression count] - 1] != @"=")
+    {
+        double result = [self.brain performOperation:@"="];    
+        if ([CalculatorBrain variablesInExpression:brain.expression])
+        {
+            display.text = [CalculatorBrain descriptionOfExpression:brain.expression];
+        }
+        else
+        {
+            display.text = [NSString stringWithFormat:@"%g", result];
+        }
+    }
     GraphViewController *gvc = [[GraphViewController alloc] init];
     gvc.expression = self.brain.expression;
     [self.navigationController pushViewController:gvc animated:YES];
     [gvc release];
-    
 }
 
 - (void)viewDidLoad

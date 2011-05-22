@@ -43,6 +43,10 @@
     for (CGFloat xPixel = 1; xPixel < pixels; xPixel++)
     {
         CGFloat yPixel = -[self.delegate YValueForX:(xPixel - center.x) / scale] * scale + center.y;
+        if (yPixel == INFINITY)
+            yPixel = MAXFLOAT;
+        if (yPixel == -INFINITY)
+            yPixel = -MAXFLOAT;
         CGContextAddLineToPoint(context, xPixel, yPixel);
     }
     CGContextStrokePath(context);
