@@ -78,4 +78,15 @@
     return value;
 }
 
+#pragma mark - UISplitViewController
+
+- (void)splitViewForController:(UISplitViewController *)sv
+        willHideViewController:(UIViewController *)aViewController
+             withBarButtonItem:(UIBarButtonItem *)barButtonItem
+          forPopoverController:(UIPopoverController *)popover
+{
+    barButtonItem.title = aViewController.title;
+    self.navigationItem.rightBarButtonItem = barButtonItem;
+}
+
 @end

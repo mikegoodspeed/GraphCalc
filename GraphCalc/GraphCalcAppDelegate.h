@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GraphCalcAppDelegate : NSObject <UIApplicationDelegate> {
-
+@interface GraphCalcAppDelegate : NSObject <UIApplicationDelegate>
+{
+    UISplitViewController *svc_;
+    UINavigationController *nc_;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

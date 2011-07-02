@@ -22,8 +22,6 @@
     return self;
 }
 
-
-
 - (void)drawRect:(CGRect)rect
 {
     int scale = self.delegate.scale;
