@@ -80,13 +80,25 @@
 
 #pragma mark - UISplitViewController
 
-- (void)splitViewForController:(UISplitViewController *)sv
-        willHideViewController:(UIViewController *)aViewController
-             withBarButtonItem:(UIBarButtonItem *)barButtonItem
-          forPopoverController:(UIPopoverController *)popover
+- (void)splitViewController:(UISplitViewController *)svc 
+     willHideViewController:(UIViewController *)aViewController 
+          withBarButtonItem:(UIBarButtonItem *)barButtonItem 
+       forPopoverController:(UIPopoverController *)pc
 {
     barButtonItem.title = aViewController.title;
-    self.navigationItem.rightBarButtonItem = barButtonItem;
+    self.navigationItem.leftBarButtonItem = barButtonItem;
+}
+
+- (void)splitViewController:(UISplitViewController *)svc
+     willShowViewController:(UIViewController *)aViewController
+  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    self.navigationItem.leftBarButtonItem = nil;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return YES;
 }
 
 @end

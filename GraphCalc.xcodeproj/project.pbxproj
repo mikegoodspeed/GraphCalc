@@ -65,14 +65,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		274DC8F513BF74AD00A687C3 /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-				274DC8F613BF74AF00A687C3 /* MainWindow-iPad.xib */,
-			);
-			name = iPad;
-			sourceTree = "<group>";
-		};
 		27D0C8571387B70F009519C3 = {
 			isa = PBXGroup;
 			children = (
@@ -103,7 +95,6 @@
 		27D0C86C1387B70F009519C3 /* GraphCalc */ = {
 			isa = PBXGroup;
 			children = (
-				274DC8F513BF74AD00A687C3 /* iPad */,
 				27D0C8A81387BE15009519C3 /* AxesDrawer.h */,
 				27D0C8A91387BE15009519C3 /* AxesDrawer.m */,
 				27D0C8901387B86B009519C3 /* CalculatorBrain.h */,
@@ -119,6 +110,7 @@
 				27D0C8B41387EE98009519C3 /* GraphViewController.m */,
 				27D0C8B51387EE98009519C3 /* GraphViewController.xib */,
 				27D0C8781387B70F009519C3 /* MainWindow.xib */,
+				274DC8F613BF74AF00A687C3 /* MainWindow-iPad.xib */,
 				27D0C86D1387B70F009519C3 /* Supporting Files */,
 			);
 			path = GraphCalc;
