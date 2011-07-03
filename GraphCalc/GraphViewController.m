@@ -27,6 +27,13 @@
     [self updateUI];
 }
 
+- (void)setExpression:(id)expression
+{
+    [expression_ release];
+    expression_ = [expression retain];
+    [self updateUI];
+}
+
 - (void)dealloc
 {
     [graphView_ release];
@@ -35,6 +42,16 @@
 }
 
 #pragma mark - View lifecycle
+
+- (void)loadView
+{
+    CGRect frame = [UIScreen mainScreen].applicationFrame;
+    GraphView *gv = [[GraphView alloc] initWithFrame:frame];
+    gv.delegate = self;
+    self.graphView = gv;
+    self.view = gv;
+    [gv release];
+}
 
 - (void)updateUI
 {

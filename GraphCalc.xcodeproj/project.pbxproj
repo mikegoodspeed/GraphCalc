@@ -20,7 +20,6 @@
 		27D0C8971387B86B009519C3 /* CalculatorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27D0C8941387B86B009519C3 /* CalculatorViewController.xib */; };
 		27D0C8AA1387BE15009519C3 /* AxesDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D0C8A91387BE15009519C3 /* AxesDrawer.m */; };
 		27D0C8B61387EE98009519C3 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D0C8B41387EE98009519C3 /* GraphViewController.m */; };
-		27D0C8B71387EE98009519C3 /* GraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27D0C8B51387EE98009519C3 /* GraphViewController.xib */; };
 		27D0C8C31387FA14009519C3 /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 27D0C8C21387FA14009519C3 /* GraphView.m */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +45,6 @@
 		27D0C8A91387BE15009519C3 /* AxesDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AxesDrawer.m; sourceTree = "<group>"; };
 		27D0C8B31387EE98009519C3 /* GraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphViewController.h; sourceTree = "<group>"; };
 		27D0C8B41387EE98009519C3 /* GraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphViewController.m; sourceTree = "<group>"; };
-		27D0C8B51387EE98009519C3 /* GraphViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GraphViewController.xib; sourceTree = "<group>"; };
 		27D0C8C11387FA14009519C3 /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
 		27D0C8C21387FA14009519C3 /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,7 +106,6 @@
 				27D0C8C21387FA14009519C3 /* GraphView.m */,
 				27D0C8B31387EE98009519C3 /* GraphViewController.h */,
 				27D0C8B41387EE98009519C3 /* GraphViewController.m */,
-				27D0C8B51387EE98009519C3 /* GraphViewController.xib */,
 				27D0C8781387B70F009519C3 /* MainWindow.xib */,
 				274DC8F613BF74AF00A687C3 /* MainWindow-iPad.xib */,
 				27D0C86D1387B70F009519C3 /* Supporting Files */,
@@ -180,7 +177,6 @@
 				27D0C8711387B70F009519C3 /* InfoPlist.strings in Resources */,
 				27D0C87A1387B70F009519C3 /* MainWindow.xib in Resources */,
 				27D0C8971387B86B009519C3 /* CalculatorViewController.xib in Resources */,
-				27D0C8B71387EE98009519C3 /* GraphViewController.xib in Resources */,
 				274DC8F813BF74AF00A687C3 /* MainWindow-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

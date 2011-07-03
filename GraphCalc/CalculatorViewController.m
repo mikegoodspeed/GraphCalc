@@ -93,9 +93,7 @@
         [self.brain setOperand:[display.text doubleValue]];
         userIsInTheMiddleOfTypingANumber = NO;
     }
-    if ([self.brain.expression count] > 0 &&
-        [self.brain.expression objectAtIndex:
-         [self.brain.expression count] - 1] != @"=")
+    if (![[self.brain.expression lastObject] isEqual:@"="])
     {
         double result = [self.brain performOperation:@"="];    
         if ([CalculatorBrain variablesInExpression:brain.expression])
@@ -107,10 +105,19 @@
             display.text = [NSString stringWithFormat:@"%g", result];
         }
     }
-    GraphViewController *gvc = [[GraphViewController alloc] init];
-    gvc.expression = self.brain.expression;
-    [self.navigationController pushViewController:gvc animated:YES];
-    [gvc release];
+    if (self.splitViewController)
+    {
+        UINavigationController *nc= [self.splitViewController.viewControllers lastObject];
+        GraphViewController *gvc = [nc.viewControllers lastObject];
+        gvc.expression = self.brain.expression;
+    }
+    else
+    {
+        GraphViewController *gvc = [[GraphViewController alloc] init];
+        gvc.expression = self.brain.expression;
+        [self.navigationController pushViewController:gvc animated:YES];
+        [gvc release];
+    }
 }
 
 - (void)viewDidLoad

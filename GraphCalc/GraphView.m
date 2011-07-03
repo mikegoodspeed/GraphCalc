@@ -16,10 +16,16 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
+    if (self)
+    {
+        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
+}
+
+- (int)yFromX:(int)x withCenter:(CGPoint)center andScale:(int)scale
+{
+    return -[self.delegate YValueForX:(x - center.x) / scale] * scale + center.y;
 }
 
 - (void)drawRect:(CGRect)rect
@@ -37,14 +43,19 @@
     CGFloat pixels = points * self.contentScaleFactor;
     CGContextMoveToPoint(context, 0, 0);
     
-    CGContextMoveToPoint(context, 0, -[self.delegate YValueForX:(0 - center.x) / scale] * scale + center.y);
+    CGFloat yPixel = [self yFromX:0 withCenter:center andScale:scale];
+    CGContextMoveToPoint(context, 0, yPixel);
     for (CGFloat xPixel = 1; xPixel < pixels; xPixel++)
     {
-        CGFloat yPixel = -[self.delegate YValueForX:(xPixel - center.x) / scale] * scale + center.y;
+        yPixel = [self yFromX:xPixel withCenter:center andScale:scale];
         if (yPixel == INFINITY)
+        {
             yPixel = MAXFLOAT;
+        }
         if (yPixel == -INFINITY)
+        {
             yPixel = -MAXFLOAT;
+        }
         CGContextAddLineToPoint(context, xPixel, yPixel);
     }
     CGContextStrokePath(context);
