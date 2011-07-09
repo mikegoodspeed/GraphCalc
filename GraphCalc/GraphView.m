@@ -23,6 +23,12 @@
     return self;
 }
 
+- (void)dealloc
+{
+    self.delegate = nil;
+    [super dealloc];
+}
+
 - (int)yFromX:(int)x withCenter:(CGPoint)center andScale:(int)scale
 {
     return -[self.delegate YValueForX:(x - center.x) / scale] * scale + center.y;
@@ -31,9 +37,9 @@
 - (void)drawRect:(CGRect)rect
 {
     int scale = self.delegate.scale;
-    CGPoint center = CGPointMake(0, 0);
-    center.x = self.bounds.size.width / 2 + self.bounds.origin.x;
-    center.y = self.bounds.size.height / 2 + self.bounds.origin.y;
+    CGPoint center = self.delegate.origin;
+    center.x += self.bounds.size.width / 2 + self.bounds.origin.x;
+    center.y += self.bounds.size.height / 2 + self.bounds.origin.y;
     [AxesDrawer drawAxesInRect:self.bounds originAtPoint:center scale:scale];
     
 	CGContextRef context = UIGraphicsGetCurrentContext();
@@ -59,12 +65,6 @@
         CGContextAddLineToPoint(context, xPixel, yPixel);
     }
     CGContextStrokePath(context);
-}
-
-- (void)dealloc
-{
-    self.delegate = nil;
-    [super dealloc];
 }
 
 @end

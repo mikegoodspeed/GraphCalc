@@ -17,6 +17,7 @@
 
 @synthesize graphView = graphView_;
 @synthesize scale = scale_;
+@synthesize origin = origin_;
 @synthesize expression = expression_;
 
 - (void)setScale:(int)scale
@@ -24,6 +25,12 @@
     if (scale < 1)
         scale = 1;
     scale_ = scale;
+    [self updateUI];
+}
+
+- (void)setOrigin:(CGPoint)origin
+{
+    origin_ = origin;
     [self updateUI];
 }
 
@@ -63,6 +70,26 @@
     [super viewDidLoad];
     self.graphView.delegate = self;
     self.scale = 14;
+    
+    UIPanGestureRecognizer *pan = 
+        [[UIPanGestureRecognizer alloc] initWithTarget:self
+                                                action:@selector(pan:)];
+    [self.graphView addGestureRecognizer:pan];
+    
+    UIPinchGestureRecognizer *pinch = 
+        [[UIPinchGestureRecognizer alloc] initWithTarget:self
+                                                  action:@selector(pinch:)];
+    [self.graphView addGestureRecognizer:pinch];
+    
+    UITapGestureRecognizer *tap =
+        [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                action:@selector(tap:)];
+    tap.numberOfTapsRequired = 2;
+    [self.graphView addGestureRecognizer:tap];
+
+    [pan release];
+    [pinch release];
+    [tap release];
 }
 
 - (void)viewDidUnload
@@ -72,16 +99,6 @@
 }
 
 #pragma mark - Implementation
-
-- (IBAction)zoomIn
-{
-    self.scale++;
-}
-
-- (IBAction)zoomOut
-{
-    self.scale--;
-}
 
 - (double)YValueForX:(double)x
 {
@@ -112,6 +129,41 @@
 {
     self.navigationItem.leftBarButtonItem = nil;
 }
+
+#pragma mark - Gestures
+
+- (void)pan:(UIPanGestureRecognizer *)recognizer
+{
+    if (recognizer.state == UIGestureRecognizerStateChanged ||
+        recognizer.state == UIGestureRecognizerStateEnded)
+    {
+        CGPoint new = [recognizer translationInView:self.graphView];
+        self.origin = CGPointMake(self.origin.x + new.x,
+                                  self.origin.y + new.y);
+        [recognizer setTranslation:CGPointZero inView:self.graphView];
+    }
+}
+
+- (void)pinch:(UIPinchGestureRecognizer *)recognizer
+{
+    if (recognizer.state == UIGestureRecognizerStateBegan ||
+        recognizer.state == UIGestureRecognizerStateEnded)
+    {
+        lastScale_ = self.scale;
+    }
+    else if (recognizer.state == UIGestureRecognizerStateChanged)
+    {
+        self.scale = lastScale_ * recognizer.scale;
+    }
+}
+
+- (void)tap:(UITapGestureRecognizer *)recognizer
+{
+    self.origin = CGPointZero;
+    self.scale = 14;
+}
+
+#pragma mark - Orientation
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {

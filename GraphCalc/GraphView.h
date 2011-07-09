@@ -12,6 +12,7 @@
 
 @protocol GraphViewDelegate
 @property (nonatomic) int scale;
+@property (nonatomic) CGPoint origin;
 - (double)YValueForX:(double)x;
 @end
 
