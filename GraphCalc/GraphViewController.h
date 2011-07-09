@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "GraphView.h"
 
-@interface GraphViewController : UIViewController <GraphViewDelegate, UISplitViewControllerDelegate>
+@interface GraphViewController : UIViewController 
+    <GraphViewDelegate, UISplitViewControllerDelegate>
 {
     GraphView *graphView_;
     int scale_;

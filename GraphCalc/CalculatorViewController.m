@@ -130,4 +130,9 @@
     return YES;
 }
 
+- (CGSize)contentSizeForViewInPopover
+{
+    return CGSizeMake(320, 480);
+}
+
 @end

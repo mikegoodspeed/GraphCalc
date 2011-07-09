@@ -22,13 +22,16 @@
         UINavigationController *mainNav = [[UINavigationController alloc] init];
         CalculatorViewController *main = [[CalculatorViewController alloc] init];
         [mainNav pushViewController:main animated:NO];
+        
         UINavigationController *detailNav = [[UINavigationController alloc] init];
         GraphViewController *detail = [[GraphViewController alloc] init];
         [detailNav pushViewController:detail animated:NO];
+        
         svc_ = [[UISplitViewController alloc] init];
         svc_.viewControllers = [NSArray arrayWithObjects:mainNav, detailNav, nil];
         svc_.delegate = detail;
         [self.window addSubview:svc_.view];
+        
         [main release];
         [detail release];
         [mainNav release];
